@@ -9,18 +9,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=JetBrains+Mono:wght@400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg:        #f5f7fa;
-      --bg2:       #eef1f6;
-      --bg3:       #e6eaf1;
-      --border:    rgba(0,0,0,0.09);
-      --green:     #007a55;
-      --green-dim: rgba(0,122,85,0.08);
-      --amber:     #b85c00;
-      --amber-dim: rgba(184,92,0,0.08);
-      --blue:      #1a60b8;
-      --text:      #111827;
-      --muted:     #5a6478;
-      --card:      #ffffff;
+      --bg:        #0a0e14;
+      --bg2:       #0f1520;
+      --bg3:       #141c2b;
+      --border:    rgba(255,255,255,0.07);
+      --green:     #00e5a0;
+      --green-dim: rgba(0,229,160,0.12);
+      --amber:     #f5a623;
+      --amber-dim: rgba(245,166,35,0.12);
+      --blue:      #4a9eff;
+      --text:      #e8edf5;
+      --muted:     #6b7a94;
+      --card:      #111827;
     }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
@@ -36,7 +36,7 @@
 
     /* ── SCROLLBAR ── */
     ::-webkit-scrollbar { width: 4px; }
-    ::-webkit-scrollbar-track { background: var(--bg2); }
+    ::-webkit-scrollbar-track { background: var(--bg); }
     ::-webkit-scrollbar-thumb { background: var(--green); border-radius: 2px; }
 
     /* ── NOISE TEXTURE ── */
@@ -54,7 +54,7 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; align-items: center; justify-content: space-between;
       padding: 1.1rem 5%;
-      background: rgba(245,247,250,0.92);
+      background: rgba(10,14,20,0.85);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
     }
@@ -84,21 +84,21 @@
     .hero-grid-bg {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(0,122,85,.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,122,85,.05) 1px, transparent 1px);
+        linear-gradient(rgba(0,229,160,.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,229,160,.04) 1px, transparent 1px);
       background-size: 60px 60px;
       mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
     }
     .hero-glow {
       position: absolute; top: 20%; right: 10%;
       width: 520px; height: 520px;
-      background: radial-gradient(circle, rgba(0,122,85,.08) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(0,229,160,.1) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-glow2 {
       position: absolute; bottom: 10%; left: 5%;
       width: 320px; height: 320px;
-      background: radial-gradient(circle, rgba(26,96,184,.06) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(74,158,255,.07) 0%, transparent 70%);
       pointer-events: none;
     }
     .hero-content { position: relative; max-width: 780px; }
@@ -142,9 +142,9 @@
       cursor: pointer; border: none;
     }
     .btn-primary {
-      background: var(--green); color: #ffffff;
+      background: var(--green); color: #0a0e14;
     }
-    .btn-primary:hover { background: #005c40; transform: translateY(-1px); }
+    .btn-primary:hover { background: #00ffb3; transform: translateY(-1px); }
     .btn-outline {
       background: transparent; color: var(--text);
       border: 1px solid var(--border);
@@ -202,7 +202,6 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.8rem;
-      box-shadow: 0 2px 12px rgba(0,0,0,.06);
     }
     .about-card-title {
       font-family: 'JetBrains Mono', monospace;
@@ -230,10 +229,9 @@
       border: 1px solid var(--border);
       border-radius: 12px;
       padding: 1.4rem;
-      transition: border-color .2s, box-shadow .2s;
-      box-shadow: 0 2px 8px rgba(0,0,0,.04);
+      transition: border-color .2s;
     }
-    .skill-cat:hover { border-color: rgba(0,122,85,.3); box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+    .skill-cat:hover { border-color: rgba(0,229,160,.3); }
     .skill-cat-title {
       font-family: 'JetBrains Mono', monospace;
       font-size: .72rem; color: var(--amber);
@@ -244,7 +242,7 @@
     .tag {
       font-size: .75rem; font-family: 'JetBrains Mono', monospace;
       padding: .25rem .65rem; border-radius: 4px;
-      background: rgba(0,0,0,.05);
+      background: rgba(255,255,255,.05);
       color: var(--text);
       border: 1px solid var(--border);
     }
@@ -267,7 +265,6 @@
       display: flex; flex-direction: column;
       transition: transform .25s, border-color .25s, box-shadow .25s;
       position: relative; overflow: hidden;
-      box-shadow: 0 2px 8px rgba(0,0,0,.05);
     }
     .project-card::before {
       content: '';
@@ -278,8 +275,8 @@
     }
     .project-card:hover {
       transform: translateY(-4px);
-      border-color: rgba(0,122,85,.3);
-      box-shadow: 0 20px 60px rgba(0,0,0,.12);
+      border-color: rgba(0,229,160,.25);
+      box-shadow: 0 20px 60px rgba(0,0,0,.4);
     }
     .project-card:hover::before { opacity: 1; }
     .project-num {
@@ -336,7 +333,7 @@
       position: absolute; left: -5px; top: 8px;
       width: 11px; height: 11px; border-radius: 50%;
       background: var(--green);
-      box-shadow: 0 0 0 3px var(--bg), 0 0 0 5px rgba(0,122,85,.2);
+      box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px rgba(0,229,160,.3);
     }
     .timeline-role {
       font-family: 'Syne', sans-serif;
@@ -375,10 +372,9 @@
       border-radius: 10px;
       padding: 1.1rem 1.2rem;
       display: flex; align-items: center; gap: .9rem;
-      transition: border-color .2s, transform .2s, box-shadow .2s;
-      box-shadow: 0 2px 6px rgba(0,0,0,.04);
+      transition: border-color .2s, transform .2s;
     }
-    .cert-card:hover { border-color: rgba(0,122,85,.3); transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.08); }
+    .cert-card:hover { border-color: rgba(0,229,160,.25); transform: translateY(-2px); }
     .cert-logo {
       font-size: 1.4rem; flex-shrink: 0;
       width: 36px; height: 36px;
@@ -452,7 +448,7 @@
       <li><a href="#experience">Experience</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
-    <a href="/cdn-cgi/l/email-protection#d0a4bfbea9b2bcb1b9a2bfb3b8b9b5beb7e790b7bdb1b9bcfeb3bfbd" class="btn btn-primary" style="font-size:.8rem;padding:.45rem 1rem;">Hire Me</a>
+    <a href="mailto:tonyblairochieng7@gmail.com" class="btn btn-primary" style="font-size:.8rem;padding:.45rem 1rem;">Hire Me</a>
   </nav>
 
   <!-- HERO -->
@@ -551,7 +547,7 @@
           <div class="info-icon">📧</div>
           <div>
             <div class="info-label">Email</div>
-            <div class="info-value"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6b1f04051209070a0219040803020e050c5c2b0c060a020745080406">[email&#160;protected]</a></div>
+            <div class="info-value">tonyblairochieng7@gmail.com</div>
           </div>
         </div>
         <div class="info-row">
@@ -845,8 +841,8 @@
         Drop me a line or connect on LinkedIn.
       </p>
       <div class="contact-links">
-        <a href="/cdn-cgi/l/email-protection#deaab1b0a7bcb2bfb7acb1bdb6b7bbb0b9e99eb9b3bfb7b2f0bdb1b3" class="contact-link">
-          <span class="icon">✉️</span> <span class="__cf_email__" data-cfemail="ff8b9091869d939e968d909c97969a9198c8bf98929e9693d19c9092">[email&#160;protected]</span>
+        <a href="mailto:tonyblairochieng7@gmail.com" class="contact-link">
+          <span class="icon">✉️</span> tonyblairochieng7@gmail.com
         </a>
         <a href="tel:+256769739297" class="contact-link">
           <span class="icon">📞</span> +256 769 739 297
@@ -867,7 +863,7 @@
     <span class="footer-mono">// Kampala, Uganda 🇺🇬</span>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  <script>
     // Intersection Observer for scroll reveals
     const revealEls = document.querySelectorAll('.reveal');
     const observer = new IntersectionObserver(
@@ -877,4 +873,15 @@
     revealEls.forEach(el => observer.observe(el));
 
     // Active nav link highlight on scroll
-    const sec
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(s => { if (window.scrollY >= s.offsetTop - 120) current = s.id; });
+      navLinks.forEach(a => {
+        a.style.color = a.getAttribute('href') === '#' + current ? 'var(--green)' : '';
+      });
+    });
+  </script>
+</body>
+</html>
